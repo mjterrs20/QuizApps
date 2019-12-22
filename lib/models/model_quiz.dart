@@ -1,6 +1,4 @@
 class Quiz {
-  var images = ["alligator", "cat", "dog", "owl"];
-
   var questions = [
     "Mukzizat nabi Muhammad SAW",
     "Nabi Yang Dimakan Ikan Paus",

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sismul/pages/quiz.dart';
+import 'package:sismul/utils/colors.dart';
+import 'package:gradient_app_bar/gradient_app_bar.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,8 +12,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Quiz"),
+      appBar: GradientAppBar(
+        automaticallyImplyLeading: false,
+        title: Text(
+          "Quiz Apps",
+          style: TextStyle(
+            fontFamily: 'Roboto',
+            color: Colors.white,
+          ),
+        ),
+        gradient: LinearGradient(
+          colors: [
+            TemaApp.blueNavyColor,
+            TemaApp.blueSeeColor,
+          ],
+          tileMode: TileMode.clamp,
+        ),
+        centerTitle: true,
+        elevation: 0.0,
       ),
       body: Container(
         margin: const EdgeInsets.all(15.0),
@@ -19,22 +37,35 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-             MaterialButton(
+            MaterialButton(
                 height: 50.0,
-                color: Colors.green,
+                color: TemaApp.blueDarkColor,
+                onPressed: () {},
+                child: Text(
+                  "Scan Quiz",
+                  style: TextStyle(fontSize: 18.0, color: Colors.white),
+                )),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 10.0),
+            ),
+            MaterialButton(
+                height: 50.0,
+                color: TemaApp.blueDarkColor,
                 onPressed: startQuiz,
-                child:  Text(
+                child: Text(
                   "Quiz App",
-                  style:  TextStyle(fontSize: 18.0, color: Colors.white),
+                  style: TextStyle(fontSize: 18.0, color: Colors.white),
                 ))
           ],
         ),
       ),
     );
   }
-  void startQuiz(){
-   setState(() {
-     Navigator.push(context, MaterialPageRoute(builder: (context)=> QuizPage()));
-   });
+
+  void startQuiz() {
+    setState(() {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => QuizPage()));
+    });
   }
 }
