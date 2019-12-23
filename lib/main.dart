@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sismul/pages/home.dart';
 import 'package:sismul/pages/quiz.dart';
+// import 'package:sismul/pages/qr.dart';
 
 
 void main() => runApp(MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/homepage': (BuildContext context) => HomePage(),
         '/quizpage': (BuildContext context) => QuizPage(),
+        // '/qrpage': (BuildContext context) => QrPage(),
       },
       theme: ThemeData(
         primaryColor: Colors.green[600],
